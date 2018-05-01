@@ -1,7 +1,9 @@
 ![screenshot](screenshot.png)
 
-# Blue Penguin for pelican
-A simple theme for pelican. Solarized pygments. Feeds support.
+# Green Penguin
+A simple theme for pelican. Fruity pygments. Feeds support.
+
+Forked from [blue-penguin](https://github.com/jody-frankowski/blue-penguin)
 
 ## Settings
 ```python
