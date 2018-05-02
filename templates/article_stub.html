@@ -14,7 +14,11 @@
 		{% endif %}                
                 
 
+		{% if article.has_summary %}
+		{{ article.summary }}
+		{% else %}
                 {{ article.content }}
+		{% endif %}
                 <div class="clear"></div>
 
                 <div class="info">
@@ -30,7 +34,7 @@
                     {% endif %}
                 </div>
 		{% if articles_page %}
-		<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read and post comments</a>
+		<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read</a>
 		{% else %}
 		{% include "disqus.html" %}
 		{% endif %}
