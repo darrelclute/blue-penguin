@@ -66,7 +66,7 @@ body {
 header, #wrapper {
     padding: 0 10px;
     min-width: 500px;
-    max-width: 910px;
+    max-width: 1010px;
     margin: auto;
 }
 
@@ -107,8 +107,8 @@ blockquote {
     color: #CCC;
     float: left;
     clear: both;
-    width: 130px;
-    font-size: 1.5em;
+    width: 190px;
+    font-size: 1.25em;
     line-height: 1em;
     margin: 0 20px 1em 0;
 }
@@ -140,7 +140,7 @@ blockquote {
 }
 
 .post {
-    margin: 0 0 4.5em 150px;
+    margin: 0 0 4.5em 210px;
 }
 .post.archives {
     margin-bottom: 1.5em;
