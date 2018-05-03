@@ -22,19 +22,25 @@
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="{{ SITEURL }}/{{ article.url }}">posted at {{ article.date.strftime("%H:%M") }}</a>
-                    {% if article.category.name != "misc" %}
-                    &nbsp;&middot;&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>
-                    {% endif %}
-                    {% if article.tags %}
-                    &nbsp;&middot;
-                    {% for t in article.tags %}
-                    &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
-                    {% endfor %}
-                    {% endif %}
+                   <div class="primary">
+      	                By {{ article.author }} &middot; Read time: {{ article.readtime.minutes }} min.
+		    </div>
+		    <div class="extra">
+                        <a href="{{ SITEURL }}/{{ article.url }}">posted at {{ article.date.strftime("%H:%M") }}</a>
+                        {% if article.category.name != "misc" %}
+                        &nbsp;&middot;&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>
+                        {% endif %}
+                        {% if article.tags %}
+                        &nbsp;&middot;
+                        {% for t in article.tags %}
+                        &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+                        {% endfor %}
+                        {% endif %}
+		    </div>
                 </div>
+                <div class="clear"></div>
 		{% if articles_page %}
-		<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read</a>
+		<a href="{{ SITEURL }}/{{ article.url }}">Click to read</a>
 		{% else %}
 		{% include "disqus.html" %}
 		{% endif %}

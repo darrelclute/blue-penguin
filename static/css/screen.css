@@ -116,8 +116,16 @@ blockquote {
 .info {
     margin-top: 1.3em;
     font-family: sans-serif;
-    text-align: right;
     color: #BBB;
+}
+.info .primary {
+    text-align: left;
+    display: inline-block;
+}
+.info .extra {
+    text-align: right;
+    float: right;
+    display: inline-block;
 }
 .info a {
     color: inherit;
