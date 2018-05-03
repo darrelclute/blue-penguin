@@ -115,6 +115,7 @@ blockquote {
 
 .info {
     margin-top: 1.3em;
+    margin-bottom: 1.3em;
     font-family: sans-serif;
     color: #BBB;
 }

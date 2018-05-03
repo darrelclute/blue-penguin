@@ -9,18 +9,6 @@
                 </h2>
                 {% endif %}
 
-		{% if not articles_page %}
-		{% include "translations.html" %}
-		{% endif %}                
-                
-
-		{% if article.has_summary %}
-		{{ article.summary }}
-		{% else %}
-                {{ article.content }}
-		{% endif %}
-                <div class="clear"></div>
-
                 <div class="info">
                    <div class="primary">
       	                By {{ article.author }} &middot; Read time: {{ article.readtime.minutes }} min.
@@ -38,6 +26,18 @@
                         {% endif %}
 		    </div>
                 </div>
+
+		{% if not articles_page %}
+		{% include "translations.html" %}
+		{% endif %}                
+                
+
+		{% if article.has_summary %}
+		{{ article.summary }}
+		{% else %}
+                {{ article.content }}
+		{% endif %}
+
                 <div class="clear"></div>
 		{% if articles_page %}
 		<a href="{{ SITEURL }}/{{ article.url }}">Click to read</a>
