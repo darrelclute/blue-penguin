@@ -32,7 +32,7 @@
 		{% endif %}                
                 
 
-		{% if article.has_summary %}
+		{% if article.has_summary and articles_page is defined %}
 		{{ article.summary }}
 		{% else %}
                 {{ article.content }}
