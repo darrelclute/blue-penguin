@@ -1,5 +1,5 @@
 {# Use PAGINATION_PATTERNS or pagination may break #}
-{% if DEFAULT_PAGINATION and (articles_page.has_previous() or articles_page.has_next()) %}
+{% if DEFAULT_PAGINATION and articles_page is defined and (articles_page.has_previous() or articles_page.has_next()) %}
 
                 <div class="clear"></div>
                 <div class="pages">
@@ -12,5 +12,19 @@
 		    <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="next_page">Next&nbsp;&rarr;</a>
                 {%- endif %}
                     <span>Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</span>
+                </div>
+{% endif %}
+{% if articles_page is not defined and (article.prev_article or article.next_article) %}
+
+                <div class="clear"></div>
+                <div class="pages">
+                {%- if article.prev_article %}
+
+		<a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="prev_page">&larr;&nbsp;{{ article.prev_article.title }}</a>
+                {%- endif %}
+                {%- if article.next_article %}
+
+		<a href="{{ SITEURL }}/{{ article.next_article.url }}" class="next_page">{{ article.next_article.title }}&nbsp;&rarr;</a>
+                {%- endif %}
                 </div>
 {% endif %}
