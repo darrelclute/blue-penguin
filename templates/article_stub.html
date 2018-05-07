@@ -11,20 +11,20 @@
 
                 <div class="info">
                    <div class="primary">
-      	                By {{ article.author }} &middot; Read time: {{ article.readtime.minutes }} min.
-		    </div>
-		    <div class="extra">
-                        <a href="{{ SITEURL }}/{{ article.url }}">posted at {{ article.date.strftime("%H:%M") }}</a>
-                        {% if article.category.name != "misc" %}
-                        &nbsp;&middot;&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>
-                        {% endif %}
-                        {% if article.tags %}
-                        &nbsp;&middot;
-                        {% for t in article.tags %}
-                        &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
-                        {% endfor %}
-                        {% endif %}
-		    </div>
+			By {{ article.author }} {% if article.readtime %}&middot; Read time: {{ article.readtime.minutes }} min.{% endif %}
+		   </div>
+		   <div class="extra">
+                       <a href="{{ SITEURL }}/{{ article.url }}">posted at {{ article.date.strftime("%H:%M") }}</a>
+                       {% if article.category.name != "misc" %}
+                       &nbsp;&middot;&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>
+                       {% endif %}
+                       {% if article.tags %}
+                       &nbsp;&middot;
+                       {% for t in article.tags %}
+                       &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+                       {% endfor %}
+                       {% endif %}
+		   </div>
                 </div>
 
 		{% if not articles_page %}
