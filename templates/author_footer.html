@@ -1,0 +1,9 @@
+{% if AUTHOR_SUMMARY %}
+<div class="clear"></div>
+<div class="avatar"><img class="avatar_img" src="{{ article.author_gravatar }}"></img></div>
+<div class="author_summary">
+	<h4>About the Author</h4>
+	<h5>{{ article.author }}</h5>
+	<p>{{ AUTHOR_SUMMARY }}</p>
+</div>
+{% endif %}
