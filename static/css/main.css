@@ -103,6 +103,15 @@ blockquote {
     border-left: 1px solid #EEE;
 }
 
+table {
+    width: 100%;
+    margin: 1em 0;
+}
+
+thead {
+    border-bottom: 1px solid black;
+}
+
 .date, .avatar {
     color: #CCC;
     float: left;
@@ -364,3 +373,68 @@ footer p { margin: 0; }
 .right { float: right; }
 
 .clear { clear: both; }
+
+@media screen and (max-width: 1024px) {
+    #wrapper {
+        margin-left: 2.6em;
+        padding:1em;
+    }
+}
+
+@media screen and (max-width: 800px), print {
+    #wrapper {
+        margin: 0;
+        padding: 1em;
+    }
+    .date {
+        width: 100%;
+        margin: 0 0 .5em 0;
+    }
+    .post {
+        margin: 0 0 4.5em 0;
+    }
+    .post pre,
+    .post code {
+        white-space: pre-wrap;
+    }
+    .archives {
+        margin: 0 0 1.5em 0 !important;
+    }
+    nav ul {
+        margin: 0 0 1em 0;
+    }
+}
+@media print {
+    * {
+        background: #fff;
+    }
+    #wrapper, #content {
+        margin: 0;
+        padding: 0;
+    }
+    header, footer, nav {
+        display: none;
+    }
+    img {
+        break-inside: avoid;
+    }
+    p, table, pre {
+        widows: 3;
+        orphans: 3;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid;
+    }
+    h1, h2 {
+        font-size: 14pt;
+    }
+    h3, h4, h4.date {
+        font-size: 12pt;
+    }
+    .post p, .post ul li, .post ol li, .post table {
+        font-size: 11pt;
+    }
+}
+@page {
+    margin: 1.5cm;
+}
